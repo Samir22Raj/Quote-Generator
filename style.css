@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: larger;
+}
+
+.block{
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+
+#quote{
+  min-width: 20dvw;
+  max-width: 80dvw;
+  border: 4px solid #000000;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.btn{
+  display: block;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #B5F8FE;
+}
+
+.hide{
+  display: none;
+}
