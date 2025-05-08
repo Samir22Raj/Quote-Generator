@@ -26,9 +26,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     //Event lister for generating a random quote on btnrandom
 		randombutton.addEventListener("click", () => {
-			let random = Math.floor(Math.random() * 15);
-			console.log(random);
-			quoteText.innerHTML = data[random].quote;
+			let randomGenre = document.getElementById("genre").value;
+			let randomQuotes = [];
+			for(date of data){
+				if(randomGenre == date.genre){
+					randomQuotes.push(date);
+				}
+			}
+			let random = Math.floor(Math.random() * randomQuotes.length);
+			quoteText.innerHTML = randomQuotes[random].quote;
 		});
 
 	} catch (error) {
