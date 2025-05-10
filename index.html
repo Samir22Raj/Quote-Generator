@@ -8,6 +8,14 @@
 </head>
 <body>
   <div class="block">
+    <div class="theme-toggle">
+      <!-- Rounded switch -->
+      <label class="switch">
+        Toggle to change theme
+        <input type="checkbox" id="theme">
+        <span class="slider round"></span>
+      </label>
+    </div>
     <p id="quote"></p>
     <div class="controls">
       <div class="prev-nxt">
@@ -17,15 +25,21 @@
       <div class="randomize">
         <p>
           Select a genre for a random quote: 
-        <select name="genre" id="genre">
-          <option value="Wisdom">Wisdom</option>
-          <option value="Motivational">Motivational</option>
-          <option value="Inspirational">Inspirational</option>
-          <option value="Adventure">Adventure</option>
-          <option value="Philosophy">Philosophy</option>
-        </select>
+          <select name="genre" id="genre">
+            <option value="Wisdom">Wisdom</option>
+            <option value="Motivational">Motivational</option>
+            <option value="Inspirational">Inspirational</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Philosophy">Philosophy</option>
+          </select>
         </p>
         <button class="btn" id="randombtn">Click To Generate Random Quote</button>
+      </div>
+      <div class="font-sizer">
+        <p>Use slider to change quote size (10px to 60px):
+          <input type="range" id="font-size" name="font-size" min="10" max="60">
+          <button class="btn" id="change-font-size">Change Size</button>
+        </p>
       </div>
     </div>
   </div>

@@ -1,3 +1,4 @@
+let quoteText = document.getElementById("quote");
 //Loading the quotes from json file on document load
 document.addEventListener("DOMContentLoaded", async () => {
 	try {
@@ -7,7 +8,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 		let randombutton = document.getElementById("randombtn");
 		let prevbutton = document.getElementById("prevbtn");
 		let nextbutton = document.getElementById("nxtbtn");
-		let quoteText = document.getElementById("quote");
 
 		let quoteNumber = 0;
 		quoteText.innerHTML = data[quoteNumber].quote;
@@ -24,15 +24,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 			quoteText.innerHTML = data[quoteNumber].quote;
 		});
 
-    //Event lister for generating a random quote on btnrandom
+    //Event lister for generating a random quote from selected genre on btnrandom click
 		randombutton.addEventListener("click", () => {
 			let randomGenre = document.getElementById("genre").value;
-			let randomQuotes = [];
-			for(date of data){
-				if(randomGenre == date.genre){
-					randomQuotes.push(date);
-				}
-			}
+			let randomQuotes = data.filter((date) => {
+				return randomGenre == date.genre;
+			})
 			let random = Math.floor(Math.random() * randomQuotes.length);
 			quoteText.innerHTML = randomQuotes[random].quote;
 		});
@@ -41,3 +38,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 		console.error("Error loading JSON:", error);
 	}
 });
+
+let fontSizeChanger = document.getElementById("change-font-size");
+fontSizeChanger.addEventListener("click", () => {
+	let fontSize = document.getElementById("font-size").value;
+	console.log(fontSize);
+	quoteText.style.fontSize = fontSize+"px";
+})
+
+let theme = document.getElementById("theme");
+let block = document.querySelector(".block");
+theme.addEventListener("click",() => {
+	block.classList.toggle("dark-mode");
+})
