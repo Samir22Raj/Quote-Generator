@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	}
 });
 
+/*Changing the font size on slider input and button click*/
 let fontSizeChanger = document.getElementById("change-font-size");
 fontSizeChanger.addEventListener("click", () => {
 	let fontSize = document.getElementById("font-size").value;
@@ -46,6 +47,7 @@ fontSizeChanger.addEventListener("click", () => {
 	quoteText.style.fontSize = fontSize+"px";
 })
 
+/*Toggling the theme from light to dark and vice versa*/
 let theme = document.getElementById("theme");
 let block = document.querySelector(".block");
 theme.addEventListener("click",() => {

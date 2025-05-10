@@ -1,29 +1,51 @@
+:root{
+  --darkgray: #111827;
+  --cyan: #B5F8FE;
+  --blue: #2196F3;
+  --gray: #ccc;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 28px;
+  font-size: 16px;
+  line-height: normal;
+}
+
+body{
+  height: 100%;
 }
 
 .block{
-  height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 20px;
+  padding: 2dvh;
 }
 
 .dark-mode{
-  background-color: #000000;
-  color: #B5F8FE;
+  background-color: var(--darkgray);
+  color: var(--cyan);
+  .btn{
+    background-color: var(--blue);
+    border-color: var(--cyan);
+  }
+  #quote{
+    border-color: var(--blue);
+  }
+  #genre{
+    color: var(--cyan);
+    background-color: var(--darkgray);
+  }
 }
 
 #quote{
-  min-width: 20dvw;
-  max-width: 80dvw;
-  border: 4px solid #000000;
-  border-radius: 8px;
+  border: 4px solid var(--darkgray);
+  border-radius: 44px;
   padding: 20px;
   font-size: 36px;
   text-align: center;
@@ -31,19 +53,21 @@
 
 .btn{
   display: block;
-  border-radius: 8px;
+  border: 2px solid var(--darkgray);
+  border-radius: 32px;
   padding: 16px;
-  background-color: #B5F8FE;
+  background-color: var(--cyan);
 }
 
 .btn:hover{
+  gap: 1rem;
   cursor: pointer;
 }
 
 .controls{
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 8px;
 }
 
 .prev-nxt, .randomize, .font-sizer p{
@@ -58,10 +82,27 @@
 .randomize{
   flex-direction: column;
   p{
-    padding-right: 4px;
+    display: flex;
+    align-items: center;
+  }
+  select{
+    margin-left: 4px;
   }
 }
 
+.font-sizer p{
+  flex-wrap: wrap;
+}
+
+#font-size {
+  max-width: 100%;
+  min-width: 80%;
+  width: fit-content;
+}
+
+#genre{
+  padding: 8px;
+}
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -76,11 +117,11 @@
 
 /* The slider */
 .slider {
-  width: 60px;
-  height: 34px;
+  width: 40px;
+  height: 20px;
   position: absolute;
   cursor: pointer;
-  background-color: #ccc;
+  background-color: var(--gray);
   -webkit-transition: .4s;
   transition: .4s; 
 }
@@ -88,27 +129,27 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 14px;
+  width: 14px;
   left: 4px;
-  bottom: 4px;
+  bottom: 3px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--blue);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px var(--blue);
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
 }
 
 /* Rounded sliders */
