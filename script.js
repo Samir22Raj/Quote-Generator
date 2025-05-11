@@ -49,7 +49,7 @@ fontSizeChanger.addEventListener("click", () => {
 
 /*Toggling the theme from light to dark and vice versa*/
 let theme = document.getElementById("theme");
-let block = document.querySelector(".block");
+let body = document.querySelector("body");
 theme.addEventListener("click",() => {
-	block.classList.toggle("dark-mode");
+	body.classList.toggle("dark-mode");
 })
